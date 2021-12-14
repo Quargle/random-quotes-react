@@ -37,10 +37,6 @@ class QuoteBox extends React.Component {
       const randomIndex = this.getRandomNumber(this.state.quotesData.length);
       console.log(`Random number selected: ${randomIndex}`)
       this.setState({currentQuote: this.state.quotesData[randomIndex]})
-      //const chosenQuote = quotesData[randomIndex];
-     //quote =  chosenQuote.quote;
-     //author = chosenQuote.author;
-     //backgroundColor = colors[getRandomNumber(colors.length)];
     }
 
     getRandomNumber(max) {
@@ -49,13 +45,19 @@ class QuoteBox extends React.Component {
     }
 
     render() {
+        const quote = this.state.currentQuote.quote;
+        const author = this.state.currentQuote.author
         return (
             <div id="quote-box">
-            <div id="text">{this.state.currentQuote.quote}</div>
-              <div id="author"> -- {this.state.currentQuote.author}</div>
+            <div id="text">{quote}</div>
+              <div id="author"> -- {author}</div>
               <div id="buttons">
-                <button className="button button-color-transition" id="new-quote" onClick={this.getQuote}>New Quote</button>
-                <a className="button" id="tweet-quote">Tweet</a>
+                <button className="button" id="new-quote" onClick={this.getQuote}>New Quote</button>
+                <a className="button" id="tweet-quote"  
+                href={"https://www.twitter.com/intent/tweet?hashtags=quotes&text="+quote+"  -- "+author}
+                >
+                  Tweet
+                </a>
               </div>
             </div>
         )
