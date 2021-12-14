@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import QuoteBox from './QuoteBox.js';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <QuoteBox />
+      <div id="portfolio-link">
+        <a id="portfolio-link-button" href="https://quargle.github.io/Portfolio/" target="_blank">Portfolio</a>
+      </div>
+     </div>
   );
 }
 
